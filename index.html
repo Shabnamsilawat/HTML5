@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy 1 Month, Kiku!</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('./images/wp13400049.webp') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    .overlay {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 50px 20px;
+      min-height: 100vh;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #ffd700;
+    }
+
+    p {
+      font-size: 1.3rem;
+      margin: 20px auto;
+      max-width: 700px;
+      line-height: 1.8;
+    }
+
+    .heart {
+      font-size: 2rem;
+      color: #ff4d4d;
+      animation: beat 1s infinite;
+    }
+
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    audio {
+      margin-top: 30px;
+    }
+
+    .centerpiece {
+      margin-top: 40px;
+    }
+
+    .centerpiece img {
+      width: 300px;
+      max-width: 80%;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+
+    .petal {
+      position: fixed;
+      top: -50px;
+      width: 20px;
+      height: 20px;
+      background: url('./images/pngtree-cartoon-sakura-hand-drawn-pink-petals-png-image_3249889-removebg-preview.png') no-repeat center center;
+      background-size: contain;
+      animation: fall linear infinite;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    .reveal-btn {
+      margin-top: 30px;
+      padding: 12px 24px;
+      background-color: #ff69b4;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .reveal-btn:hover {
+      background-color: #ff85c1;
+    }
+
+    .love-note {
+      margin-top: 25px;
+      font-size: 1.4rem;
+      color: #ffd1dc;
+      opacity: 0;
+      transition: opacity 1s ease-in;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .show {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <h1>Happy 1 Month Anniversary, Kiku!</h1>
+    <p>Dearest Kiku,</p>
+    <p>
+      Just like Naruto and Hinata’s bond growing through trials, trust, and love, you and I have found something truly special. Every moment with you feels like a gentle wind in a peaceful Hidden Leaf afternoon.
+    </p>
+    <p>
+      One month ago, we started this little adventure together, and in just 30 days, you've become such an irreplaceable part of my life. Your smile brightens my darkest hours, and your voice calms my restless thoughts. Being with you feels like coming home safe, warm, and full of love.
+    </p>
+    <p>
+      I never imagined someone could understand me the way you do. Your patience, your hugs, your late-night check-ins all of it means the world to me. You're not just my boyfriend, you're my teammate, my best friend, my happy place.
+    </p>
+    <p>
+      Thank you for being by my side this past month. I cherish every message, every call, and every memory we’ve made. I can’t wait to keep growing with you, to laugh more, to dream more, and to love you even deeper with every new sunrise.
+    </p>
+    <p>
+      You’re my hero, my calm, my very own shinobi. And I’ll always be your Sakura.
+    </p>
+    <p>Forever yours, <br><strong>Sakura</strong> <span class="heart">&#10084;</span></p>
+
+    <div class="centerpiece">
+      <img src="./images/wp2799401.webp" alt="Naruto and Hinata Sitting Together">
+    </div>
+
+    <button class="reveal-btn" onclick="revealLoveNote()">Click to Reveal My Love</button>
+
+    <div id="loveNote" class="love-note">
+      <p>
+        If I could bottle up all the joy you've brought me and gift it back to you, you'd smile forever. You're my moonlight in stormy skies, the gentle peace in my chaotic world. I love you, not just for who you are, but for how you make me feel loved, seen, and understood.
+      </p>
+    </div>
+
+    <audio controls autoplay loop>
+      <source src="./images/Thousand-Years.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <!-- Sakura Petals -->
+  <script>
+    function createPetal() {
+      const petal = document.createElement('div');
+      petal.classList.add('petal');
+      petal.style.left = Math.random() * window.innerWidth + 'px';
+      petal.style.animationDuration = (5 + Math.random() * 5) + 's';
+      document.body.appendChild(petal);
+
+      setTimeout(() => petal.remove(), 10000);
+    }
+
+    setInterval(createPetal, 300);
+
+    function revealLoveNote() {
+      document.getElementById('loveNote').classList.add('show');
+    }
+  </script>
+</body>
+</html>
